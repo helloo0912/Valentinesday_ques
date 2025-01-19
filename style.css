@@ -1,0 +1,153 @@
+/* General body styling */
+body {
+    font-family: 'Sacramento', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(to bottom right, #fadadd, #fff5e6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Main container */
+#container {
+    position: relative;
+    text-align: center;
+}
+
+/* Envelope styling */
+#envelope {
+    width: 220px;
+    height: 160px;
+    position: relative;
+    background: linear-gradient(to bottom, #f44177, #ff8ca0);
+    margin: auto;
+    border-radius: 0 0 20px 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#envelope:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 110px;
+    background: linear-gradient(to bottom, #ff8ca0, #f44177);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transition: transform 1s ease-in-out;
+}
+
+#envelope-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: 110px;
+    background: #fff5e6;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#heart-seal {
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    bottom: -12px;
+    background: linear-gradient(to bottom, #f44177, #ff8ca0);
+    border: 3px solid white;
+    border-radius: 50%;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card styling */
+#question-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    padding: 20px;
+    background: #fff5e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden initially */
+    border: 2px solid #f44177;
+}
+
+#question {
+    font-size: 1.8rem;
+    color: #f44177;
+    margin: 20px 0;
+}
+
+#emoji-border {
+    font-size: 1.2rem;
+    color: #f44177;
+    margin: 10px 0;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #f44177;
+    color: white;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: #ff8ca0;
+    transform: scale(1.1);
+}
+
+/* Hidden initially */
+.hidden {
+    display: none;
+}
+
+/* Beating heart animation */
+#hearts {
+    font-size: 2rem;
+    color: #f44177;
+    animation: heartbeat 1s infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+}
